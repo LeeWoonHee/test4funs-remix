@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "category": "교육",
+    "title": "국기 맞추기",
+    "desc": "10개의 세계 각국의 국기를 보고 나라를 맞춰보세요!",
+    "image": "https://test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com/flag/title-image.png",
+    "link": "/flagTest"
+  },
+  {
+    "id": 2,
+    "category": "어린이 퀴즈",
+    "title": "포켓몬 맞추기",
+    "desc": "10개의 포켓몬을 보고 이름을 맞춰보세요!",
+    "image": "https://test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com/poketmon/poketmon-title.png",
+    "link": "/poketmonQuiz"
+  }
+]

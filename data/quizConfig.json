@@ -1,0 +1,20 @@
+{
+  "flag": {
+    "title": "test4funs - 국기 맞추기",
+    "description": "전세계 국기를 맞추는 퀴즈게임",
+    "keywords": "국기 맞추기, 세계 국기 맞추기, flag quiz, 국기 퀴즈, 세계 국기 퀴즈",
+    "jsonFile": "flagQuiz.json"
+  },
+  "k-league": {
+    "title": "test4funs - K리그 선수 맞추기",
+    "description": "K리그 선수들을 맞추는 재미있는 퀴즈입니다.",
+    "keywords": "K리그, 축구, 선수 맞추기, 스포츠 퀴즈, 한국 축구",
+    "jsonFile": "kLeague.json"
+  },
+  "kbl": {
+    "title": "test4funs - KBL 선수 맞추기",
+    "description": "KBL 농구 선수들을 맞추는 재미있는 퀴즈입니다.",
+    "keywords": "KBL, 농구, 선수 맞추기, 스포츠 퀴즈, 한국 농구",
+    "jsonFile": "kbl.json"
+  }
+}

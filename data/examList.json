@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "category": "교육",
+    "title": "국기 맞추기",
+    "desc": "10개의 세계 각국의 국기를 보고 나라를 맞춰보세요!",
+    "image": "https://test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com/flag/title-image.png",
+    "link": "/quiz/flag"
+  },
+  {
+    "id": 2,
+    "category": "스포츠",
+    "title": "K리그 선수 맞추기",
+    "desc": "10개의 사진을 보고 K리그 선수를 맞춰보세요!",
+    "image": "https://test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com/k-league-football/kleague-title.png",
+    "link": "/quiz/k-league"
+  }
+]
