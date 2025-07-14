@@ -19,3 +19,14 @@ export interface QuizListType {
   placeholder: string;
   quiz: QuizData[];
 }
+
+export interface QuizConfigItem {
+  title: string;
+  description: string;
+  keywords: string;
+  jsonFile: string;
+}
+
+export interface QuizConfigType {
+  [key: string]: QuizConfigItem;
+}

@@ -44,7 +44,7 @@ export const loader: LoaderFunction = async ({params}) => {
 const QuizPage = () => {
   const {quizData, placeholder} = useLoaderData<typeof loader>();
   const params = useParams();
-  console.log(params);
+  params;
 
   return <Quiz propsData={quizData} placeholder={placeholder} />;
 };
