@@ -14,5 +14,13 @@
     "desc": "10개의 사진을 보고 K리그 선수를 맞춰보세요!",
     "image": "https://test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com/k-league-football/kleague-title.png",
     "link": "/quiz/k-league"
+  },
+  {
+    "id": 3,
+    "category": "스포츠",
+    "title": "KBL 선수 맞추기",
+    "desc": "10개의 사진을 보고 KBL 농구 선수를 맞춰보세요!",
+    "image": "https://test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com/kbl/kbl-title.png",
+    "link": "/quiz/kbl"
   }
 ]

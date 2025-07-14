@@ -61,7 +61,7 @@ const QuizImage = ({image, alt, onLoad}: QuizImageProps): JSX.Element => (
     <img
       src={image}
       alt={alt}
-      className='w-full h-full border-[2px] border-[#aaa] border-solid object-contain'
+      className='w-full max-h-[50vh] border-[2px] border-[#aaa] border-solid object-contain'
       onLoad={onLoad}
       loading='eager'
     />
