@@ -30,5 +30,13 @@
     "desc": "자주 봤지만 잘 모르는 물건 이름을 맞춰보세요!",
     "image": "https://test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com/goods/goods-title.png",
     "link": "/quiz/goods"
+  },
+  {
+    "id": 5,
+    "category": "캐릭터",
+    "title": "이탈리안 브레인롯 맞추기",
+    "desc": "이탈리안 브레인롯을 보고 이름을 맞춰보세요!",
+    "image": "https://test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com/italian-branirot/italian-title.png",
+    "link": "/quiz/italian-brainrot"
   }
 ]
