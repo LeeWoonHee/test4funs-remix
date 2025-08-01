@@ -26,7 +26,7 @@
   "italian-brainrot": {
     "title": "test4funs - 이탈리안 브레인롯 맞추기",
     "description": "이탈리안 브레인롯을 보고 이름을 맞추는 퀴즈입니다.",
-    "keywords": "이탈리안 브레인롯, 이탈리안 브레인롯 맞추기, 이탈리안 브레인롯 퀴즈, 이탈리안 브레인롯 퀴즈, 이탈리안 브레인롯 퀴즈, italian brainrot quiz, italian brainrot, 둥둥둥둥 사후르, 퉁퉁퉁퉁 사후르, ",
+    "keywords": "이탈리안 브레인롯,이탈리안 브레인 롯, 이탈리안 브레인 롯 맞추기, 이탈리안 브레인 롯 퀴즈, 이탈리안 브레인롯 맞추기, 이탈리안 브레인롯 퀴즈, italian brainrot quiz, italian brainrot, 둥둥둥둥 사후르, 퉁퉁퉁퉁 사후르",
     "jsonFile": "italianBrainrot.json"
   }
 }
