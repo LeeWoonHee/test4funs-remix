@@ -16,10 +16,20 @@ export const links: LinksFunction = () => [
   // SEO 관련 링크들
   { rel: "canonical", href: "https://test4funs.com" },
   { rel: "sitemap", type: "application/xml", href: "/sitemap.xml" },
-  // 프리페치 DNS
+  // 성능 최적화를 위한 DNS 프리페치
   {
     rel: "dns-prefetch",
     href: "//test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com",
+  },
+  // 구글 폰트 프리로드 (성능 향상)
+  {
+    rel: "preconnect",
+    href: "https://fonts.googleapis.com",
+  },
+  {
+    rel: "preconnect",
+    href: "https://fonts.gstatic.com",
+    crossOrigin: "anonymous",
   },
 ];
 
@@ -31,7 +41,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow" />
-
+        
+₩
         <Meta />
         <Links />
       </head>

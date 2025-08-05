@@ -48,15 +48,18 @@ const MotionCardList = ({ data }: { data: ExamListType[] }) => {
                     {!loadedImages.has(index) && <LoadingSpinner />}
                     <img
                       src={item.image}
-                      alt={item.title}
-                      className={`w-full h-[25vh] group-hover:scale-[1.2] duration-300 ${
+                      alt={`${item.title} - ${item.desc}`}
+                      width="400"
+                      height="300"
+                      className={`w-full h-[25vh] object-cover group-hover:scale-[1.2] duration-300 ${
                         loadedImages.has(index)
                           ? "opacity-100"
                           : "opacity-0 absolute"
                       }`}
                       onLoad={() => handleImageLoad(index)}
                       onError={() => handleImageLoad(index)}
-                      loading="eager"
+                      loading={index < 4 ? "eager" : "lazy"}
+                      decoding="async"
                     />
                   </div>
                   <div className="w-full flex justify-start items-center flex-wrap text-[1.2vw] font-[500] px-[1vw] py-[3vw]">

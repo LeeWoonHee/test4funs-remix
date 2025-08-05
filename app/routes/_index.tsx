@@ -6,15 +6,35 @@ import { ExamListType } from "~/lib/types";
 
 export const meta: MetaFunction = () => {
   return [
-    { title: "test4funs" },
+    { title: "Test4Funs - 재밌는 퀴즈 게임으로 즐기는 온라인 퀴즈" },
     {
       name: "description",
-      content: "test4funs",
+      content:
+        "국기 퀴즈, K리그 선수 퀴즈, KBL 선수 퀴즈 등 다양한 주제의 재미있는 온라인 퀴즈 게임을 무료로 즐겨보세요. 남녀노소 모두가 즐길 수 있는 교육적이고 재미있는 퀴즈 플랫폼입니다.",
     },
     {
       name: "keywords",
       content:
-        "test4funs, 퀴즈 맞추기, 국기 맞추기, 국기 퀴즈, k리그 선수 맞추기, k리그 선수 퀴즈, kbl 선수 맞추기, kbl 선수 퀴즈",
+        "온라인 퀴즈, 퀴즈 게임, 국기 퀴즈, K리그 선수 퀴즈, KBL 선수 퀴즈, 무료 퀴즈, 교육 게임, 상식 퀴즈, 스포츠 퀴즈, test4funs",
+    },
+    // Open Graph tags for social sharing
+    {
+      property: "og:title",
+      content: "Test4Funs - 재밌는 퀴즈 게임으로 즐기는 온라인 퀴즈",
+    },
+    {
+      property: "og:description",
+      content:
+        "국기 퀴즈, K리그 선수 퀴즈, KBL 선수 퀴즈 등 다양한 주제의 재미있는 온라인 퀴즈 게임을 무료로 즐겨보세요.",
+    },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://test4funs.com" },
+    // Twitter Card tags
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "Test4Funs - 재밌는 퀴즈 게임" },
+    {
+      name: "twitter:description",
+      content: "다양한 주제의 재미있는 온라인 퀴즈 게임을 무료로 즐겨보세요.",
     },
   ];
 };
@@ -30,13 +50,7 @@ export default function Index() {
 
   return (
     <div className="w-full h-full">
-      {/* <div className='flex justify-center items-center text-[1.4vw] font-[700] pt-[4vw] text-[#00000f]'>
-        남녀노소 모두가 즐길 수 있는 다양한 주제의 퀴즈게임을 즐겨보세요!
-      </div>
-      <div className='flex justify-center items-center text-[1vw] font-[600] pt-[1vw] text-[#00000f]'>
-        원하는 게임을 선택해서 시작하세요!
-      </div> */}
-      <div className="px-[2vw]">
+      <div className="px-4 md:px-8">
         <MotionCardList data={examList} />
       </div>
     </div>

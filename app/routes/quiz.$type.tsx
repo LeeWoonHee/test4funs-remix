@@ -9,13 +9,27 @@ export const meta: MetaFunction = ({params}) => {
   const config = quizConfig[type];
 
   if (!config) {
-    return [{title: 'test4funs - 퀴즈'}];
+    return [
+      {title: 'Test4Funs - 퀴즈 게임'},
+      {name: 'description', content: '재미있는 온라인 퀴즈 게임을 즐겨보세요.'},
+    ];
   }
 
   return [
-    {title: config.title},
+    {title: `${config.title} | Test4Funs`},
     {name: 'description', content: config.description},
     {name: 'keywords', content: config.keywords},
+    // Open Graph tags
+    {property: 'og:title', content: `${config.title} | Test4Funs`},
+    {property: 'og:description', content: config.description},
+    {property: 'og:type', content: 'website'},
+    {property: 'og:url', content: `https://test4funs.com/quiz/${type}`},
+    // Twitter Card tags
+    {name: 'twitter:card', content: 'summary'},
+    {name: 'twitter:title', content: config.title},
+    {name: 'twitter:description', content: config.description},
+    // Additional SEO
+    {name: 'robots', content: 'index, follow'},
   ];
 };
 
