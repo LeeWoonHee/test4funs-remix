@@ -68,6 +68,36 @@
         "answer": "워치포켓",
         "image": "https://test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com/goods/watchpocket.png",
         "title": "워치포켓"
+      },
+      {
+        "answer": "부표",
+        "image": "https://test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com/goods/2.png",
+        "title": "부표"
+      },
+      {
+        "answer": "락교",
+        "image": "https://test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com/goods/3.png",
+        "title": "락교"
+      },
+      {
+        "answer": "옥춘당",
+        "image": "https://test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com/goods/4.png",
+        "title": "옥춘당"
+      },
+      {
+        "answer": "반합",
+        "image": "https://test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com/goods/5.png",
+        "title": "반합"
+      },
+      {
+        "answer": "볼라드",
+        "image": "https://test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com/goods/6.png",
+        "title": "볼라드"
+      },
+      {
+        "answer": "천사채",
+        "image": "https://test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com/goods/7.png",
+        "title": "천사채"
       }
     ]
   }
