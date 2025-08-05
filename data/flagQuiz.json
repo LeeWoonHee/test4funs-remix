@@ -81,7 +81,8 @@
       },
       {
         "answer": "멕시코",
-        "image": "https://ap-northeast-2.console.aws.amazon.com/s3/object/test4funs-image-bucket?region=ap-northeast-2&bucketType=general&prefix=flag/Flag_of_Mexico.png",
+        "image": "https://test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com/flag/Flag_of_Mexico.png",
+
         "title": "멕시코 국기"
       },
       {
