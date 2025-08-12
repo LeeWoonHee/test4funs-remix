@@ -41,10 +41,14 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow" />
-        
-₩
+
         <Meta />
         <Links />
+        <script
+          async11
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691879714410770"
+          crossOrigin="anonymous"
+        ></script>
       </head>
       <body className="h-full bg-[#fbf6ff]">
         <Header />
