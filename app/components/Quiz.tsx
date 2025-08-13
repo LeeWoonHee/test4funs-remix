@@ -181,14 +181,29 @@ export default function Quiz({propsData, placeholder}: QuizProps): JSX.Element {
 
   // 로딩 중 화면
   if (isLoading) {
-    return <div className='min-h-screen flex items-center justify-center'>로딩중...</div>;
+    return (
+      <div className='min-h-screen flex flex-col items-center justify-center p-8'>
+        <div className='w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4'></div>
+        <h2 className='text-xl font-bold mb-4'>퀴즈를 준비하고 있습니다</h2>
+        <p className='text-gray-600 text-center max-w-md'>
+          Test4Funs에서 제공하는 다양한 퀴즈 게임을 통해 재미있게 학습하세요. 
+          국기 퀴즈, 스포츠 선수 퀴즈 등 교육적 가치가 높은 콘텐츠를 준비했습니다.
+        </p>
+      </div>
+    );
   }
 
   // 데이터 없음 화면
   if (!quizData.length) {
     return (
-      <div className='min-h-screen flex items-center justify-center'>
-        데이터를 불러올 수 없습니다.
+      <div className='min-h-screen flex flex-col items-center justify-center p-8'>
+        <h2 className='text-2xl font-bold mb-4'>퀴즈 데이터 오류</h2>
+        <p className='text-gray-600 text-center max-w-md mb-6'>
+          현재 퀴즈 데이터를 불러올 수 없습니다. 다른 퀴즈를 시도해보시거나 잠시 후 다시 시도해주세요.
+        </p>
+        <Link to='/' className='px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors'>
+          다른 퀴즈 선택하기
+        </Link>
       </div>
     );
   }

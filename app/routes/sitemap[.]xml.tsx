@@ -18,6 +18,24 @@ export const loader: LoaderFunction = async () => {
         changefreq: 'weekly',
         priority: '1.0',
       },
+      {
+        url: `${baseUrl}/about`,
+        lastmod: currentDate,
+        changefreq: 'monthly',
+        priority: '0.7',
+      },
+      {
+        url: `${baseUrl}/privacy`,
+        lastmod: currentDate,
+        changefreq: 'yearly',
+        priority: '0.5',
+      },
+      {
+        url: `${baseUrl}/terms`,
+        lastmod: currentDate,
+        changefreq: 'yearly',
+        priority: '0.5',
+      },
     ];
 
     // 동적 퀴즈 페이지들
