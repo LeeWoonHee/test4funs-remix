@@ -28,5 +28,11 @@
     "description": "이탈리안 브레인롯을 보고 이름을 맞추는 퀴즈입니다.",
     "keywords": "이탈리안 브레인롯,이탈리안 브레인 롯, 이탈리안 브레인 롯 맞추기, 이탈리안 브레인 롯 퀴즈, 이탈리안 브레인롯 맞추기, 이탈리안 브레인롯 퀴즈, italian brainrot quiz, italian brainrot, 둥둥둥둥 사후르, 퉁퉁퉁퉁 사후르",
     "jsonFile": "italianBrainrot.json"
+  },
+  "tiniping": {
+    "title": "test4funs - 티니핑 캐릭터 맞추기",
+    "description": "티니핑 캐릭터를 보고 이름을 맞추는 퀴즈입니다. 하츄핑부터 뿌뿌핑까지 108개 캐릭터를 맞춰보세요!",
+    "keywords": "티니핑, 티니핑 캐릭터, 티니핑 맞추기, 티니핑 퀴즈, 하츄핑, 부끄핑, 뿌뿌핑, 캐치 티니핑, 아이돌 티니핑, 로얄 티니핑, 어린이 퀴즈, 유아 퀴즈, 캐릭터 맞추기, 애니메이션 퀴즈, 티니핑 게임",
+    "jsonFile": "tiniping.json"
   }
 }

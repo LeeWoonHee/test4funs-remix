@@ -34,9 +34,17 @@
   {
     "id": 5,
     "category": "캐릭터",
-    "title": "이탈리안 브레인롯 맞추기",
+    "title": "이탈리안 브레인롯",
     "desc": "이탈리안 브레인롯을 보고 이름을 맞춰보세요!",
     "image": "https://test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com/italian-branirot/italian-title.png",
     "link": "/quiz/italian-brainrot"
+  },
+  {
+    "id": 6,
+    "category": "캐릭터",
+    "title": "티니핑 캐릭터 맞추기",
+    "desc": "티니핑 캐릭터를 보고 이름을 맞춰보세요!",
+    "image": "https://test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com/tiniping/title.png",
+    "link": "/quiz/tiniping"
   }
 ]
