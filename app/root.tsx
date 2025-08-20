@@ -12,7 +12,7 @@ import Header from "~/components/Header";
 import "~/styles/main.scss";
 
 export const links: LinksFunction = () => [
-  { rel: "icon", href: logo },
+  { rel: "icon", href: "/favicon.ico" },
   // SEO 관련 링크들
   { rel: "canonical", href: "https://test4funs.com" },
   { rel: "sitemap", type: "application/xml", href: "/sitemap.xml" },
