@@ -5,6 +5,7 @@ export const meta: MetaFunction = () => {
     { title: "개인정보처리방침 | Test4Funs" },
     { name: "description", content: "Test4Funs 개인정보처리방침" },
     { name: "robots", content: "index, follow" },
+    {tagName: 'link', rel: 'canonical', href: 'https://test4funs.com/privacy'},
   ];
 };
 

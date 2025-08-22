@@ -14,7 +14,7 @@ import "~/styles/main.scss";
 export const links: LinksFunction = () => [
   { rel: "icon", href: "/favicon.ico" },
   // SEO 관련 링크들
-  { rel: "canonical", href: "https://test4funs.com" },
+  
   { rel: "sitemap", type: "application/xml", href: "/sitemap.xml" },
   // 성능 최적화를 위한 DNS 프리페치
   {

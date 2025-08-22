@@ -10,6 +10,10 @@ export const loader: LoaderFunction = async () => {
     // 퀴즈 설정 데이터 로드
     const quizConfig = await jsonLoader<QuizConfigType>('quizConfig.json');
 
+    if (!quizConfig) {
+      throw new Error('Failed to load quiz config');
+    }
+
     // 기본 페이지들
     const staticPages = [
       {

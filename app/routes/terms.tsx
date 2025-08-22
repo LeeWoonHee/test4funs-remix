@@ -5,6 +5,7 @@ export const meta: MetaFunction = () => {
     { title: "이용약관 | Test4Funs" },
     { name: "description", content: "Test4Funs 이용약관" },
     { name: "robots", content: "index, follow" },
+    {tagName: 'link', rel: 'canonical', href: 'https://test4funs.com/terms'},
   ];
 };
 

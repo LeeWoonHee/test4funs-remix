@@ -29,6 +29,7 @@ export const meta: MetaFunction = () => {
     },
     {property: 'og:type', content: 'website'},
     {property: 'og:url', content: 'https://test4funs.com'},
+    {tagName: 'link', rel: 'canonical', href: 'https://test4funs.com'},
     {property: 'og:image', content: 'https://test4funs.com/assets/semo-logo.svg'},
     {property: 'og:image:width', content: '1200'},
     {property: 'og:image:height', content: '630'},
