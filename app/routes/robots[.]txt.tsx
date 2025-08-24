@@ -15,7 +15,7 @@ Allow: /assets/
 Allow: /favicon.ico
 
 # Sitemap 위치
-Sitemap: https://test4funs.com/sitemap.xml
+Sitemap: https://www.test4funs.com/sitemap.xml
 
 # 크롤링 속도 조절 (선택사항)
 Crawl-delay: 1

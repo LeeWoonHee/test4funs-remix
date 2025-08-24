@@ -23,16 +23,16 @@ export const meta: MetaFunction = ({params}) => {
     {property: 'og:title', content: `${config.title} | Test4Funs`},
     {property: 'og:description', content: config.description},
     {property: 'og:type', content: 'website'},
-    {property: 'og:url', content: `https://test4funs.com/quiz/${type}`},
-    {tagName: 'link', rel: 'canonical', href: `https://test4funs.com/quiz/${type}`},
-    {property: 'og:image', content: 'https://test4funs.com/assets/semo-logo.svg'},
+    {property: 'og:url', content: `https://www.test4funs.com/quiz/${type}`},
+    {tagName: 'link', rel: 'canonical', href: `https://www.test4funs.com/quiz/${type}`},
+    {property: 'og:image', content: 'https://www.test4funs.com/assets/semo-logo.svg'},
     {property: 'og:image:width', content: '1200'},
     {property: 'og:image:height', content: '630'},
     // Twitter Card tags
     {name: 'twitter:card', content: 'summary_large_image'},
     {name: 'twitter:title', content: config.title},
     {name: 'twitter:description', content: config.description},
-    {name: 'twitter:image', content: 'https://test4funs.com/assets/semo-logo.svg'},
+    {name: 'twitter:image', content: 'https://www.test4funs.com/assets/semo-logo.svg'},
     // Additional SEO
     {name: 'robots', content: 'index, follow'},
   ];

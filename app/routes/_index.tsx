@@ -28,9 +28,9 @@ export const meta: MetaFunction = () => {
         '국기 퀴즈, K리그 선수 퀴즈, KBL 선수 퀴즈 등 다양한 주제의 재미있는 온라인 퀴즈 게임을 무료로 즐겨보세요.',
     },
     {property: 'og:type', content: 'website'},
-    {property: 'og:url', content: 'https://test4funs.com'},
-    {tagName: 'link', rel: 'canonical', href: 'https://test4funs.com'},
-    {property: 'og:image', content: 'https://test4funs.com/assets/semo-logo.svg'},
+    {property: 'og:url', content: 'https://www.test4funs.com'},
+    {tagName: 'link', rel: 'canonical', href: 'https://www.test4funs.com'},
+    {property: 'og:image', content: 'https://www.test4funs.com/assets/semo-logo.svg'},
     {property: 'og:image:width', content: '1200'},
     {property: 'og:image:height', content: '630'},
     // Twitter Card tags
@@ -40,7 +40,7 @@ export const meta: MetaFunction = () => {
       name: 'twitter:description',
       content: '다양한 주제의 재미있는 온라인 퀴즈 게임을 무료로 즐겨보세요.',
     },
-    {name: 'twitter:image', content: 'https://test4funs.com/assets/semo-logo.svg'},
+    {name: 'twitter:image', content: 'https://www.test4funs.com/assets/semo-logo.svg'},
   ];
 };
 

@@ -3,7 +3,7 @@ import {jsonLoader} from '~/lib/jsonLoader';
 import {QuizConfigType} from '~/lib/types';
 
 export const loader: LoaderFunction = async () => {
-  const baseUrl = 'https://test4funs.com';
+  const baseUrl = 'https://www.test4funs.com';
   const currentDate = new Date().toISOString().split('T')[0];
 
   try {
@@ -80,19 +80,19 @@ ${allPages
     const basicSitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>${baseUrl}</loc>
+    <loc>https://www.test4funs.com</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>${baseUrl}/quiz/flag</loc>
+    <loc>https://www.test4funs.com/quiz/flag</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>${baseUrl}/quiz/k-league</loc>
+    <loc>https://www.test4funs.com/quiz/k-league</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

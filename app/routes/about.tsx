@@ -12,7 +12,7 @@ export const meta: MetaFunction = () => {
       content: "온라인 퀴즈, 교육 게임, 국기 퀴즈, 스포츠 퀴즈, 무료 학습, test4funs 소개" 
     },
     { name: "robots", content: "index, follow" },
-    {tagName: 'link', rel: 'canonical', href: 'https://test4funs.com/about'},
+    {tagName: 'link', rel: 'canonical', href: 'https://www.test4funs.com/about'},
   ];
 };
 
