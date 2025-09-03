@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/flagTest/:path*",
+      "destination": "/quiz/flag"
+    }
+  ]
+}

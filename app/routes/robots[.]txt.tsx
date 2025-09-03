@@ -1,25 +1,21 @@
 import type {LoaderFunction} from '@remix-run/node';
 
 export const loader: LoaderFunction = () => {
-  const robotText = `
-User-agent: *
+  const robotText = `User-agent: *
 Allow: /
 
 # 주요 페이지들
-Allow: /quiz/flag
-Allow: /quiz/k-league
-Allow: /quiz/kbl
+Allow: /quiz/
+Allow: /about
+Allow: /privacy
+Allow: /terms
 
 # 정적 파일들
 Allow: /assets/
 Allow: /favicon.ico
 
 # Sitemap 위치
-Sitemap: https://www.test4funs.com/sitemap.xml
-
-# 크롤링 속도 조절 (선택사항)
-Crawl-delay: 1
-`;
+Sitemap: https://www.test4funs.com/sitemap.xml`;
 
   return new Response(robotText, {
     status: 200,

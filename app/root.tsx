@@ -41,9 +41,27 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
         <meta name="googlebot" content="index, follow" />
+        <meta name="google-site-verification" content="" />
 
         <Meta />
         <Links />
+        
+        {/* 구조화된 데이터 */}
+        <script type="application/ld+json">
+        {`{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Test4Funs",
+          "url": "https://www.test4funs.com",
+          "description": "재미있는 온라인 퀴즈 게임 플랫폼",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://www.test4funs.com/quiz/{search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        }`}
+        </script>
+        
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691879714410770"
