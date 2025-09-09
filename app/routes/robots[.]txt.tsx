@@ -14,6 +14,14 @@ Allow: /terms
 Allow: /assets/
 Allow: /favicon.ico
 
+# 크롤링 빈도 제어
+Crawl-delay: 1
+
+# Google Search Console에서 선호하는 표준 페이지 명시
+# 메인 페이지 우선순위 설정
+Disallow: /*?
+Disallow: /*#
+
 # Sitemap 위치
 Sitemap: https://www.test4funs.com/sitemap.xml`;
 

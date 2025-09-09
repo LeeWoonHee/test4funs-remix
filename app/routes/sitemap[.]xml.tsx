@@ -14,47 +14,50 @@ export const loader: LoaderFunction = async () => {
       throw new Error('Failed to load quiz config');
     }
 
-    // 기본 페이지들
+    // 기본 페이지들 (우선순위 최적화)
     const staticPages = [
       {
         url: baseUrl,
         lastmod: currentDate,
-        changefreq: 'weekly',
+        changefreq: 'daily',
         priority: '1.0',
       },
       {
         url: `${baseUrl}/about`,
         lastmod: currentDate,
         changefreq: 'monthly',
-        priority: '0.7',
+        priority: '0.8',
       },
       {
         url: `${baseUrl}/privacy`,
         lastmod: currentDate,
         changefreq: 'yearly',
-        priority: '0.5',
+        priority: '0.3',
       },
       {
         url: `${baseUrl}/terms`,
         lastmod: currentDate,
         changefreq: 'yearly',
-        priority: '0.5',
+        priority: '0.3',
       },
     ];
 
-    // 동적 퀴즈 페이지들
+    // 동적 퀴즈 페이지들 (메인 콘텐츠 우선순위 높게)
     const quizPages = Object.keys(quizConfig).map((type) => ({
       url: `${baseUrl}/quiz/${type}`,
       lastmod: currentDate,
-      changefreq: 'monthly',
-      priority: '0.8',
+      changefreq: 'weekly',
+      priority: '0.9',
     }));
 
     const allPages = [...staticPages, ...quizPages];
 
+    // 우선순위 순으로 정렬 (높은 우선순위부터)
+    const sortedPages = allPages.sort((a, b) => parseFloat(b.priority) - parseFloat(a.priority));
+    
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${allPages
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+${sortedPages
   .map(
     (page) => `  <url>
     <loc>${page.url}</loc>
@@ -69,8 +72,9 @@ ${allPages
     return new Response(sitemap, {
       status: 200,
       headers: {
-        'Content-Type': 'application/xml',
-        'Cache-Control': 'public, max-age=86400', // 24시간 캐시
+        'Content-Type': 'application/xml; charset=utf-8',
+        'Cache-Control': 'public, max-age=3600', // 1시간 캐시 (더 자주 업데이트)
+        'X-Robots-Tag': 'noindex', // 사이트맵 자체는 색인하지 않음
       },
     });
   } catch (error) {
@@ -102,8 +106,9 @@ ${allPages
     return new Response(basicSitemap, {
       status: 200,
       headers: {
-        'Content-Type': 'application/xml',
-        'Cache-Control': 'public, max-age=86400',
+        'Content-Type': 'application/xml; charset=utf-8',
+        'Cache-Control': 'public, max-age=3600',
+        'X-Robots-Tag': 'noindex',
       },
     });
   }

@@ -3,9 +3,18 @@ import type { MetaFunction } from "@remix-run/node";
 export const meta: MetaFunction = () => {
   return [
     { title: "개인정보처리방침 | Test4Funs" },
-    { name: "description", content: "Test4Funs 개인정보처리방침" },
+    { name: "description", content: "Test4Funs 개인정보처리방침. 개인정보 수집 및 이용, 쿠키 사용, 광고 서비스에 관한 내용을 확인하세요." },
     { name: "robots", content: "index, follow" },
     {tagName: 'link', rel: 'canonical', href: 'https://www.test4funs.com/privacy'},
+    // Open Graph tags
+    {property: 'og:title', content: '개인정보처리방침 | Test4Funs'},
+    {property: 'og:description', content: 'Test4Funs 개인정보처리방침 및 쿠키 사용 정책'},
+    {property: 'og:type', content: 'website'},
+    {property: 'og:url', content: 'https://www.test4funs.com/privacy'},
+    // Twitter Card tags
+    {name: 'twitter:card', content: 'summary'},
+    {name: 'twitter:title', content: '개인정보처리방침 | Test4Funs'},
+    {name: 'twitter:description', content: 'Test4Funs 개인정보처리방침'},
   ];
 };
 

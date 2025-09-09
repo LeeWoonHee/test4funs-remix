@@ -13,6 +13,17 @@ export const meta: MetaFunction = () => {
     },
     { name: "robots", content: "index, follow" },
     {tagName: 'link', rel: 'canonical', href: 'https://www.test4funs.com/about'},
+    // Open Graph tags
+    {property: 'og:title', content: 'Test4Funs 소개 - 재미있는 온라인 퀴즈 게임'},
+    {property: 'og:description', content: 'Test4Funs는 교육적 가치가 높은 온라인 퀴즈 게임을 제공합니다. 국기 맞추기, 스포츠 선수 퀴즈 등 다양한 주제로 재미있게 학습하세요.'},
+    {property: 'og:type', content: 'website'},
+    {property: 'og:url', content: 'https://www.test4funs.com/about'},
+    {property: 'og:image', content: 'https://www.test4funs.com/assets/semo-logo.svg'},
+    // Twitter Card tags
+    {name: 'twitter:card', content: 'summary_large_image'},
+    {name: 'twitter:title', content: 'Test4Funs 소개'},
+    {name: 'twitter:description', content: '교육적 가치가 높은 온라인 퀴즈 게임을 제공합니다.'},
+    {name: 'twitter:image', content: 'https://www.test4funs.com/assets/semo-logo.svg'},
   ];
 };
 

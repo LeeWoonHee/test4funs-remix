@@ -3,9 +3,18 @@ import type { MetaFunction } from "@remix-run/node";
 export const meta: MetaFunction = () => {
   return [
     { title: "이용약관 | Test4Funs" },
-    { name: "description", content: "Test4Funs 이용약관" },
+    { name: "description", content: "Test4Funs 온라인 퀴즈 게임 서비스 이용약관. 무료 서비스 이용 조건 및 주의사항을 확인하세요." },
     { name: "robots", content: "index, follow" },
     {tagName: 'link', rel: 'canonical', href: 'https://www.test4funs.com/terms'},
+    // Open Graph tags
+    {property: 'og:title', content: '이용약관 | Test4Funs'},
+    {property: 'og:description', content: 'Test4Funs 온라인 퀴즈 게임 서비스 이용약관'},
+    {property: 'og:type', content: 'website'},
+    {property: 'og:url', content: 'https://www.test4funs.com/terms'},
+    // Twitter Card tags
+    {name: 'twitter:card', content: 'summary'},
+    {name: 'twitter:title', content: '이용약관 | Test4Funs'},
+    {name: 'twitter:description', content: 'Test4Funs 서비스 이용약관'},
   ];
 };
 

@@ -43,7 +43,14 @@ export const loader: LoaderFunction = async ({params}) => {
   const config = quizConfig[type];
 
   if (!config) {
-    throw new Response('Not Found', {status: 404});
+    throw new Response('퀴즈를 찾을 수 없습니다', {
+      status: 404,
+      statusText: 'Quiz Not Found',
+      headers: {
+        'Cache-Control': 'no-cache',
+        'X-Robots-Tag': 'noindex',
+      }
+    });
   }
 
   try {
@@ -57,7 +64,15 @@ export const loader: LoaderFunction = async ({params}) => {
       config,
     };
   } catch (error) {
-    throw new Response('Quiz data not found', {status: 404});
+    console.error(`퀴즈 데이터 로드 실패: ${type}`, error);
+    throw new Response('퀴즈 데이터를 불러올 수 없습니다', {
+      status: 404,
+      statusText: 'Quiz Data Not Found',
+      headers: {
+        'Cache-Control': 'no-cache',
+        'X-Robots-Tag': 'noindex',
+      }
+    });
   }
 };
 const QuizPage = () => {

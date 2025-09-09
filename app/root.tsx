@@ -48,7 +48,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         
         {/* 구조화된 데이터 */}
         <script type="application/ld+json">
-        {`{
+        {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
           "name": "Test4Funs",
@@ -56,10 +56,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
           "description": "재미있는 온라인 퀴즈 게임 플랫폼",
           "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://www.test4funs.com/quiz/{search_term_string}",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://www.test4funs.com/quiz/{search_term_string}"
+            },
             "query-input": "required name=search_term_string"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "Test4Funs",
+            "url": "https://www.test4funs.com"
           }
-        }`}
+        })}
         </script>
         
         <script
