@@ -278,18 +278,21 @@ export default function Quiz({
               )}
 
               {/* 정답 입력 폼 */}
-              <form onSubmit={checkAnswer} className="mt-6">
+              <form
+                onSubmit={checkAnswer}
+                className="lg:mt-[1.25vw] mt-[2.34vw]"
+              >
                 <input
                   type="text"
                   value={userInput}
                   onChange={handleInputChange}
                   placeholder={placeholder}
-                  className="w-full px-4 py-2 border rounded-lg mb-4 text-[2vw]"
+                  className="w-full lg:px-[0.83vw] px-[1.56vw] lg:py-[0.42vw] py-[0.78vw] border lg:rounded-[0.42vw] rounded-[0.78vw] lg:mb-[0.83vw] mb-[1.56vw] lg:text-[1.98vw] text-[3.71vw]"
                 />
                 <div className="flex justify-center">
                   <button
                     type="submit"
-                    className="px-[2vw] py-[1vw] bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-[1.6vw]"
+                    className="lg:px-[1.98vw] px-[3.13vw] lg:py-[0.99vw] py-[1.86vw] bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors lg:text-[1.61vw] text-[3.03vw]"
                     disabled={userInput.trim() === ""}
                   >
                     정답 확인

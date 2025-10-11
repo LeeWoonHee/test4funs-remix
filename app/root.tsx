@@ -96,9 +96,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
         <ClientOnlyScripts />
       </head>
-      <body className="h-full bg-[#fbf6ff]">
+      <body className="min-h-screen flex flex-col bg-[#fbf6ff]">
         <Header />
-        <main className="w-full h-auto">{children}</main>
+        <main className="w-full flex-1">{children}</main>
 
         <ScrollRestoration />
         <Scripts />
