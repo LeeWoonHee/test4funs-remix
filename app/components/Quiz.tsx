@@ -1,7 +1,7 @@
-import {LazyMotion, domAnimation, m, AnimatePresence} from 'motion/react';
-import {useState, useEffect, useCallback} from 'react';
-import {Link} from '@remix-run/react';
-import {QuizData} from '~/lib/types';
+import { LazyMotion, domAnimation, m, AnimatePresence } from "motion/react";
+import { useState, useEffect, useCallback } from "react";
+import { Link } from "@remix-run/react";
+import { QuizData } from "~/lib/types";
 
 // 타입 정의
 
@@ -29,57 +29,61 @@ interface FeedbackMessageProps {
 // 로딩 컴포넌트
 const LoadingSpinner = (): JSX.Element => (
   <m.div
-    className='absolute inset-0 flex items-center justify-center'
-    initial={{opacity: 0}}
+    className="absolute inset-0 flex items-center justify-center"
+    initial={{ opacity: 0 }}
     animate={{
       opacity: 1,
       transition: {
         duration: 0.5,
         repeat: Infinity,
-        repeatType: 'reverse',
+        repeatType: "reverse",
       },
     }}
   >
-    <div className='w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin'></div>
+    <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
   </m.div>
 );
 
 // 퀴즈 이미지 컴포넌트
-const QuizImage = ({image, alt, onLoad}: QuizImageProps): JSX.Element => (
+const QuizImage = ({ image, alt, onLoad }: QuizImageProps): JSX.Element => (
   <m.div
-    className='relative w-full h-full'
-    initial={{opacity: 0, scale: 0.8}}
+    className="relative w-full h-full"
+    initial={{ opacity: 0, scale: 0.8 }}
     animate={{
       opacity: 1,
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: 'easeOut',
+        ease: "easeOut",
       },
     }}
   >
     <img
       src={image}
       alt={alt}
-      className='w-full max-h-[50vh] border-[2px] border-[#aaa] border-solid object-contain'
+      className="w-full max-h-[50vh] border-[2px] border-[#aaa] border-solid object-contain"
       onLoad={onLoad}
-      loading='eager'
+      loading="eager"
     />
   </m.div>
 );
 
 // 결과 화면 컴포넌트
-const ResultScreen = ({score, total}: ResultScreenProps): JSX.Element => (
-  <m.div initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 0.5}}>
-    <h2 className='text-2xl font-bold text-center'>게임 종료!</h2>
-    <h2 className='text-2xl font-bold text-center mt-4'>
+const ResultScreen = ({ score, total }: ResultScreenProps): JSX.Element => (
+  <m.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ duration: 0.5 }}
+  >
+    <h2 className="text-2xl font-bold text-center">게임 종료!</h2>
+    <h2 className="text-2xl font-bold text-center mt-4">
       맞힌 개수: {score} / {total}
     </h2>
-    <Link to='/' className='w-full flex justify-center items-center'>
+    <Link to="/" className="w-full flex justify-center items-center">
       <m.div
-        className='w-[12vw] flex justify-center items-center mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors'
-        whileHover={{scale: 1.05}}
-        whileTap={{scale: 0.95}}
+        className="w-[12vw] flex justify-center items-center mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
       >
         홈으로 돌아가기
       </m.div>
@@ -88,22 +92,30 @@ const ResultScreen = ({score, total}: ResultScreenProps): JSX.Element => (
 );
 
 // 정답 메시지 컴포넌트
-const FeedbackMessage = ({isCorrect, correctAnswer}: FeedbackMessageProps): JSX.Element => (
+const FeedbackMessage = ({
+  isCorrect,
+  correctAnswer,
+}: FeedbackMessageProps): JSX.Element => (
   <m.p
-    initial={{opacity: 0, y: 10}}
-    animate={{opacity: 1, y: 0}}
-    transition={{duration: 0.3}}
-    className={`mt-4 text-center ${isCorrect ? 'text-green-500' : 'text-red-500'}`}
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.3 }}
+    className={`mt-4 text-center ${
+      isCorrect ? "text-green-500" : "text-red-500"
+    }`}
   >
-    {isCorrect ? '정답입니다!' : `오답! 정답: ${correctAnswer}`}
+    {isCorrect ? "정답입니다!" : `오답! 정답: ${correctAnswer}`}
   </m.p>
 );
 
-export default function Quiz({propsData, placeholder}: QuizProps): JSX.Element {
+export default function Quiz({
+  propsData,
+  placeholder,
+}: QuizProps): JSX.Element {
   // 상태 관리
   const [quizData, setQuizData] = useState<QuizData[]>([]);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [userInput, setUserInput] = useState<string>('');
+  const [userInput, setUserInput] = useState<string>("");
   const [score, setScore] = useState<number>(0);
   const [showResult, setShowResult] = useState<boolean>(false);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
@@ -114,19 +126,21 @@ export default function Quiz({propsData, placeholder}: QuizProps): JSX.Element {
   // 데이터 초기화
   useEffect(() => {
     if (!propsData || !Array.isArray(propsData)) {
-      console.error('Invalid propsData:', propsData);
+      console.error("Invalid propsData:", propsData);
       setIsLoading(false);
       return;
     }
 
     // 문제 데이터 준비
-    const shuffledData = [...propsData].sort(() => Math.random() - 0.5).slice(0, 10);
+    const shuffledData = [...propsData]
+      .sort(() => Math.random() - 0.5)
+      .slice(0, 10);
 
     setQuizData(shuffledData);
 
     // 이미지 프리로딩
     shuffledData.forEach((data: QuizData) => {
-      const img = new window.Image();
+      const img = new Image();
       img.src = data.image;
     });
 
@@ -143,7 +157,8 @@ export default function Quiz({propsData, placeholder}: QuizProps): JSX.Element {
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
-      const isAnswerCorrect = userInput.trim() === quizData[currentIndex].answer;
+      const isAnswerCorrect =
+        userInput.trim() === quizData[currentIndex].answer;
       setIsCorrect(isAnswerCorrect);
 
       if (isAnswerCorrect) {
@@ -156,7 +171,7 @@ export default function Quiz({propsData, placeholder}: QuizProps): JSX.Element {
           // 이미지 전환을 위한 상태 설정
           setIsChanging(true);
           setCurrentIndex((prev) => prev + 1);
-          setUserInput('');
+          setUserInput("");
           setIsCorrect(null);
 
           // 이미지 전환 완료 설정
@@ -170,9 +185,12 @@ export default function Quiz({propsData, placeholder}: QuizProps): JSX.Element {
   );
 
   // 입력 변경 핸들러
-  const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setUserInput(e.target.value);
-  }, []);
+  const handleInputChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      setUserInput(e.target.value);
+    },
+    []
+  );
 
   // 이미지 로드 완료 핸들러
   const handleImageLoad = useCallback(() => {
@@ -182,12 +200,13 @@ export default function Quiz({propsData, placeholder}: QuizProps): JSX.Element {
   // 로딩 중 화면
   if (isLoading) {
     return (
-      <div className='min-h-screen flex flex-col items-center justify-center p-8'>
-        <div className='w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4'></div>
-        <h2 className='text-xl font-bold mb-4'>퀴즈를 준비하고 있습니다</h2>
-        <p className='text-gray-600 text-center max-w-md'>
-          Test4Funs에서 제공하는 다양한 퀴즈 게임을 통해 재미있게 학습하세요. 
-          국기 퀴즈, 스포츠 선수 퀴즈 등 교육적 가치가 높은 콘텐츠를 준비했습니다.
+      <div className="min-h-screen flex flex-col items-center justify-center p-8">
+        <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4"></div>
+        <h2 className="text-xl font-bold mb-4">퀴즈를 준비하고 있습니다</h2>
+        <p className="text-gray-600 text-center max-w-md">
+          Test4Funs에서 제공하는 다양한 퀴즈 게임을 통해 재미있게 학습하세요.
+          국기 퀴즈, 스포츠 선수 퀴즈 등 교육적 가치가 높은 콘텐츠를
+          준비했습니다.
         </p>
       </div>
     );
@@ -196,12 +215,16 @@ export default function Quiz({propsData, placeholder}: QuizProps): JSX.Element {
   // 데이터 없음 화면
   if (!quizData.length) {
     return (
-      <div className='min-h-screen flex flex-col items-center justify-center p-8'>
-        <h2 className='text-2xl font-bold mb-4'>퀴즈 데이터 오류</h2>
-        <p className='text-gray-600 text-center max-w-md mb-6'>
-          현재 퀴즈 데이터를 불러올 수 없습니다. 다른 퀴즈를 시도해보시거나 잠시 후 다시 시도해주세요.
+      <div className="min-h-screen flex flex-col items-center justify-center p-8">
+        <h2 className="text-2xl font-bold mb-4">퀴즈 데이터 오류</h2>
+        <p className="text-gray-600 text-center max-w-md mb-6">
+          현재 퀴즈 데이터를 불러올 수 없습니다. 다른 퀴즈를 시도해보시거나 잠시
+          후 다시 시도해주세요.
         </p>
-        <Link to='/' className='px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors'>
+        <Link
+          to="/"
+          className="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+        >
           다른 퀴즈 선택하기
         </Link>
       </div>
@@ -214,20 +237,20 @@ export default function Quiz({propsData, placeholder}: QuizProps): JSX.Element {
   // 메인 렌더링
   return (
     <LazyMotion features={domAnimation}>
-      <div className='min-h-screen flex flex-col items-center justify-center p-4'>
-        <div className='w-[50%] bg-white rounded-lg shadow-lg p-6'>
+      <div className="min-h-screen flex flex-col items-center justify-center p-[2vw]">
+        <div className="lg:w-[50%] w-[80%] bg-white rounded-lg shadow-lg p-6">
           {!showResult ? (
             <>
               {/* 이미지 영역 */}
-              <div className='relative w-full h-[80%] flex items-center justify-center'>
-                <AnimatePresence mode='wait' initial={false}>
+              <div className="relative w-full h-[80%] flex items-center justify-center">
+                <AnimatePresence mode="wait" initial={false}>
                   {!isChanging && currentQuiz?.image && (
                     <m.div
                       key={`image-container-${currentIndex}`}
-                      className='relative w-full h-full'
-                      initial={{opacity: 0}}
-                      animate={{opacity: 1}}
-                      exit={{opacity: 0, transition: {duration: 0}}}
+                      className="relative w-full h-full"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0, transition: { duration: 0 } }}
                     >
                       {!imageLoaded && <LoadingSpinner />}
                       {currentQuiz.image && (
@@ -244,10 +267,10 @@ export default function Quiz({propsData, placeholder}: QuizProps): JSX.Element {
 
               {/* 다음 이미지 프리로드 */}
               {quizData[currentIndex + 1]?.image && (
-                <div className='hidden'>
+                <div className="hidden">
                   <img
                     src={quizData[currentIndex + 1].image}
-                    alt='다음 이미지 프리로드'
+                    alt="다음 이미지 프리로드"
                     width={1}
                     height={1}
                   />
@@ -255,19 +278,19 @@ export default function Quiz({propsData, placeholder}: QuizProps): JSX.Element {
               )}
 
               {/* 정답 입력 폼 */}
-              <form onSubmit={checkAnswer} className='mt-6'>
+              <form onSubmit={checkAnswer} className="mt-6">
                 <input
-                  type='text'
+                  type="text"
                   value={userInput}
                   onChange={handleInputChange}
                   placeholder={placeholder}
-                  className='w-full px-4 py-2 border rounded-lg mb-4'
+                  className="w-full px-4 py-2 border rounded-lg mb-4 text-[2vw]"
                 />
-                <div className='flex justify-center'>
+                <div className="flex justify-center">
                   <button
-                    type='submit'
-                    className='px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors'
-                    disabled={userInput.trim() === ''}
+                    type="submit"
+                    className="px-[2vw] py-[1vw] bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors text-[1.6vw]"
+                    disabled={userInput.trim() === ""}
                   >
                     정답 확인
                   </button>
@@ -276,7 +299,10 @@ export default function Quiz({propsData, placeholder}: QuizProps): JSX.Element {
 
               {/* 정답/오답 피드백 */}
               {isCorrect !== null && (
-                <FeedbackMessage isCorrect={isCorrect} correctAnswer={currentQuiz.answer} />
+                <FeedbackMessage
+                  isCorrect={isCorrect}
+                  correctAnswer={currentQuiz.answer}
+                />
               )}
             </>
           ) : (

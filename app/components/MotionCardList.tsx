@@ -3,7 +3,7 @@ import { LazyMotion, domAnimation, m } from "motion/react";
 import { useState } from "react";
 import { ExamListType } from "~/lib/types";
 
-const MotionCardList = ({ data }: { data: ExamListType[] }) => {
+const MotionCardList = ({ data }: { data: ExamListType[] | null }) => {
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set());
 
   const handleImageLoad = (index: number) => {
@@ -30,11 +30,11 @@ const MotionCardList = ({ data }: { data: ExamListType[] }) => {
   return (
     <LazyMotion features={domAnimation}>
       <div className="w-full mx-auto py-[10vw]">
-        <div className="w-full px-[4vw] flex justify-start items-center flex-wrap">
-          {data.map((item, index) => (
+        <div className="w-full px-[4vw] flex lg:justify-start justify-center items-center flex-wrap">
+          {data?.map((item, index) => (
             <m.div
               key={index}
-              className="w-[23%] cursor-pointer mx-2 mb-[1.1vw]"
+              className="lg:w-[23%] md:w-[30%] w-[80%] cursor-pointer mx-2 lg:mb-[1.1vw] mb-[5vw]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -62,7 +62,7 @@ const MotionCardList = ({ data }: { data: ExamListType[] }) => {
                       decoding="async"
                     />
                   </div>
-                  <div className="w-full flex justify-start items-center flex-wrap text-[1.2vw] font-[500] px-[1vw] py-[3vw]">
+                  <div className="w-full flex justify-start items-center flex-wrap text-[1.2vw] font-[500] px-[1vw] py-[3vw] min-h-[17vw]">
                     <div className="flex justify-center items-center text-[1vw] text-[#7531ad] bg-[#f3e7ff] px-[0.6vw] rounded-2xl">
                       {item.category}
                     </div>

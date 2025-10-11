@@ -12,8 +12,9 @@ export interface QuizData {
   title: string;
   answer: string;
 }
+export type QuizListType = QuizListItem[];
 
-export interface QuizListType {
+export interface QuizListItem {
   id: number;
   title: string;
   placeholder: string;

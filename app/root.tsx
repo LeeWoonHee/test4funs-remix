@@ -6,15 +6,63 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import logo from "~/assets/semo-logo.svg";
+import { useEffect, useState } from "react";
+
 import Footer from "~/components/Footer";
 import Header from "~/components/Header";
 import "~/styles/main.scss";
 
+function ClientOnlyScripts() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+  return (
+    <>
+      {/* 구조화된 데이터 */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Test4Funs",
+            url: "https://www.test4funs.com",
+            description: "재미있는 온라인 퀴즈 게임 플랫폼",
+            potentialAction: {
+              "@type": "SearchAction",
+              target: {
+                "@type": "EntryPoint",
+                urlTemplate:
+                  "https://www.test4funs.com/quiz/{search_term_string}",
+              },
+              "query-input": "required name=search_term_string",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Test4Funs",
+              url: "https://www.test4funs.com",
+            },
+          }),
+        }}
+      />
+
+      {/* Google AdSense */}
+      <script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691879714410770"
+        crossOrigin="anonymous"
+      />
+    </>
+  );
+}
+
 export const links: LinksFunction = () => [
   { rel: "icon", href: "/favicon.ico" },
   // SEO 관련 링크들
-  
+
   { rel: "sitemap", type: "application/xml", href: "/sitemap.xml" },
   // 성능 최적화를 위한 DNS 프리페치
   {
@@ -45,36 +93,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
         <Meta />
         <Links />
-        
-        {/* 구조화된 데이터 */}
-        <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "Test4Funs",
-          "url": "https://www.test4funs.com",
-          "description": "재미있는 온라인 퀴즈 게임 플랫폼",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": {
-              "@type": "EntryPoint",
-              "urlTemplate": "https://www.test4funs.com/quiz/{search_term_string}"
-            },
-            "query-input": "required name=search_term_string"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Test4Funs",
-            "url": "https://www.test4funs.com"
-          }
-        })}
-        </script>
-        
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691879714410770"
-          crossOrigin="anonymous"
-        ></script>
+
+        <ClientOnlyScripts />
       </head>
       <body className="h-full bg-[#fbf6ff]">
         <Header />
