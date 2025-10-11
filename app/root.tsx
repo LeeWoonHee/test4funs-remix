@@ -96,7 +96,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
         <ClientOnlyScripts />
       </head>
-      <body className="min-h-screen flex flex-col bg-[#fbf6ff]">
+      <body className="min-h-dvh  flex flex-col bg-[#fbf6ff]">
         <Header />
         <main className="w-full flex-1">{children}</main>
 
