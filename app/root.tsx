@@ -19,37 +19,39 @@ function ClientOnlyScripts() {
   }, []);
 
   if (!mounted) return null;
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Test4Funs",
+    url: "https://www.test4funs.com",
+    description: "재미있는 온라인 퀴즈 게임 플랫폼",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://www.test4funs.com/quiz/{search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Test4Funs",
+      url: "https://www.test4funs.com",
+    },
+  };
+
+  const structuredDataJson = JSON.stringify(structuredData, null, 2).replace(
+    /</g,
+    "\\u003c"
+  );
+
   return (
     <>
-      {/* 구조화된 데이터 */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            name: "Test4Funs",
-            url: "https://www.test4funs.com",
-            description: "재미있는 온라인 퀴즈 게임 플랫폼",
-            potentialAction: {
-              "@type": "SearchAction",
-              target: {
-                "@type": "EntryPoint",
-                urlTemplate:
-                  "https://www.test4funs.com/quiz/{search_term_string}",
-              },
-              "query-input": "required name=search_term_string",
-            },
-            publisher: {
-              "@type": "Organization",
-              name: "Test4Funs",
-              url: "https://www.test4funs.com",
-            },
-          }),
-        }}
+        dangerouslySetInnerHTML={{ __html: structuredDataJson }}
       />
 
-      {/* Google AdSense */}
       <script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691879714410770"
@@ -58,6 +60,45 @@ function ClientOnlyScripts() {
     </>
   );
 }
+//   return (
+//     <>
+//       {/* 구조화된 데이터 */}
+//       <script
+//         type="application/ld+json"
+//         dangerouslySetInnerHTML={{
+//           __html: JSON.stringify({
+//             "@context": "https://schema.org",
+//             "@type": "WebSite",
+//             name: "Test4Funs",
+//             url: "https://www.test4funs.com",
+//             description: "재미있는 온라인 퀴즈 게임 플랫폼",
+//             potentialAction: {
+//               "@type": "SearchAction",
+//               target: {
+//                 "@type": "EntryPoint",
+//                 urlTemplate:
+//                   "https://www.test4funs.com/quiz/{search_term_string}",
+//               },
+//               "query-input": "required name=search_term_string",
+//             },
+//             publisher: {
+//               "@type": "Organization",
+//               name: "Test4Funs",
+//               url: "https://www.test4funs.com",
+//             },
+//           }),
+//         }}
+//       />
+
+//       {/* Google AdSense */}
+//       <script
+//         async
+//         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6691879714410770"
+//         crossOrigin="anonymous"
+//       />
+//     </>
+//   );
+// }
 
 export const links: LinksFunction = () => [
   { rel: "icon", href: "/favicon.ico" },
