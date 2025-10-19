@@ -5,7 +5,7 @@
     "placeholder": "티니핑 캐릭터 이름을 입력해주세요",
     "quiz": [
       {
-        "answer": "하츄핑",
+        "answer": "스타 하츄핑",
         "image": "https://test4funs-image-bucket.s3.ap-northeast-2.amazonaws.com/tiniping/1.webp",
         "title": "1"
       },

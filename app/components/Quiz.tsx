@@ -157,8 +157,11 @@ export default function Quiz({
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
 
+      console.log(userInput.replace(/\s/g, ""));
+      console.log(quizData[currentIndex].answer.replace(/\s/g, ""));
       const isAnswerCorrect =
-        userInput.trim() === quizData[currentIndex].answer;
+        userInput.replace(/\s/g, "") ===
+        quizData[currentIndex].answer.replace(/\s/g, "");
       setIsCorrect(isAnswerCorrect);
 
       if (isAnswerCorrect) {
